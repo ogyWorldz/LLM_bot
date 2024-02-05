@@ -1,7 +1,7 @@
 # Project Summary
 
 ## Title
-LLM Bot
+LLM Bot - youtube
 
 ## Overview
 Create a simple LLM Bot. 
