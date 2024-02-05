@@ -10,13 +10,13 @@ Create a simple LLM Bot.
 <!-- ~~ ~~ -->
 - [x] Find video sources
     - [link here](https://www.youtube.com/watch?v=NYSWn1ipbgg)
-- Chat bot can recieve input and respond
-- Warehouse as a source
-- Document as a source
-- Api as a source
-- Chat bot on public domain
-- hosted on a server
-- AWS documentation completed on final product
+- [ ] Chat bot can recieve input and respond
+- [ ] Warehouse as a source
+- [ ] Document as a source
+- [ ] Api as a source
+- [ ] Chat bot on public domain
+- [ ] hosted on a server
+- [ ] AWS documentation completed on final product
 
 <!-- ## Deliverables
 - [List of key things the project will produce.] -->
