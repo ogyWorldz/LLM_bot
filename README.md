@@ -4,7 +4,7 @@
 LLM Bot - youtube
 
 ## Overview
-Create a simple LLM Bot. 
+Create a simple LLM Bot. This bot will use youtube transripts to answer questions about the video. 
 
 ## Objectives 
 <!-- ~~ ~~ -->
