@@ -65,6 +65,6 @@ def get_response_from_query(db, query, k=4):
 video_url = "https://www.youtube.com/watch?v=NYSWn1ipbgg"
 db = create_db_from_youtube_video_url(video_url)
 
-query = "what is this video about?"
+query = input("Enter something: ")
 response, docs = get_response_from_query(db, query)
 print(textwrap.fill(response, width=50))
