@@ -1,37 +1,46 @@
 # Project Summary
 
 ## Title
-[Your Project Title]
+LLM Bot
 
 ## Overview
-[Briefly describe what the project is about.]
+Create a simple LLM Bot. 
 
-## Objectives
-- [Objective 1]
-- [Objective 2]
-- [Objective 3]
+## Objectives 
+<!-- ~~ ~~ -->
+- [x] Find video sources
+    - [link here](https://www.youtube.com/watch?v=NYSWn1ipbgg)
+- Chat bot can recieve input and respond
+- Warehouse as a source
+- Document as a source
+- Api as a source
+- Chat bot on public domain
+- hosted on a server
+- AWS documentation completed on final product
 
-## Deliverables
-- [List of key things the project will produce.]
+<!-- ## Deliverables
+- [List of key things the project will produce.] -->
 
 ## Timeline
-[Outline major milestones and deadlines.]
+- Ongoing project
 
-## Stakeholders
-- [List of key people involved in the project.]
+<!-- ## Stakeholders
+-  -->
 
 ## Risks
-- [Potential challenges or risks.]
+- Poor quality information
 
 ## Success Criteria
-[Specify what will make the project successful.]
+- To be determined
 
-## Communication
-[Outline how communication will happen.]
+<!-- ## Communication
+[Outline how communication will happen.] -->
 
 ## Next Steps
-[Highlight immediate next steps.]
-
+- [x] code is running
+- [ ] How many tokens to run the code
+- [ ] Create webpage with input and output
+- [ ] Connect webpage to the code
+- [ ] host this on a server
 ---
 
-Customize as needed for your specific project.
