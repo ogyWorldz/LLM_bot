@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question-Answer System</title>
+    <title>YouTube Chat</title>
 </head>
 <body>
 
-    <h1>Question-Answer System</h1>
+    <h1>YouTube Chat</h1>
 
-    <label for="question">Enter your question:</label>
-    <input type="text" id="question" placeholder="Type your question here">
+    <label for="videoUrl">YouTube Video URL:</label>
+    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
 
-    <button onclick="askQuestion()">Ask</button>
+    <label for="query">Enter Something:</label>
+    <input type="text" id="query" placeholder="Enter your query">
 
-    <div id="response">
-        <!-- Output response will be displayed here -->
+    <button onclick="runPythonScript()">Get Response</button>
+
+    <div>
+        <label>Output:</label>
+        <textarea id="output" rows="10" cols="50" readonly></textarea>
     </div>
 
     <script>
-        function askQuestion() {
-            // Get the question from the input field
-            var question = document.getElementById("question").value;
+        function runPythonScript() {
+            // Get values from input fields
+            var videoUrl = document.getElementById("videoUrl").value;
+            var query = document.getElementById("query").value;
 
-            // Call your Python code here to get the response
-            // You can use AJAX, fetch API, or any other method to send the question to your Python backend
+            // Call Python script using an AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Display the output in the 'output' textarea
+                    document.getElementById("output").value = xhr.responseText;
+                }
+            };
 
-            // For demonstration purposes, let's assume a synchronous response
-            var response = "Your Python response goes here";
-
-            // Display the response in the output area
-            document.getElementById("response").innerHTML = "<p><strong>Response:</strong> " + response + "</p>";
+            // Replace 'your_python_script.py' with the actual filename
+            xhr.open("GET", "youtube_chat.py?videoUrl=" + videoUrl + "&query=" + query, true);
+            xhr.send();
         }
     </script>
 

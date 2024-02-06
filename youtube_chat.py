@@ -62,7 +62,7 @@ def get_response_from_query(db, query, k=4):
 
 
 # Example usage:
-video_url = "https://www.youtube.com/watch?v=NYSWn1ipbgg"
+video_url = "https://www.youtube.com/watch?v=YHy4gqTyrX4"
 db = create_db_from_youtube_video_url(video_url)
 
 query = input("Enter something: ")
