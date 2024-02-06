@@ -3,43 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Chat</title>
+    <title>Video Query</title>
 </head>
 <body>
 
-    <h1>YouTube Chat</h1>
+    <h1>Video Query</h1>
 
-    <label for="videoUrl">YouTube Video URL:</label>
-    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
+    <form id="queryForm">
+        <label for="videoUrl">Video URL:</label>
+        <input type="text" id="videoUrl" name="videoUrl" value="https://www.youtube.com/watch?v=YHy4gqTyrX4" required>
 
-    <label for="query">Enter Something:</label>
-    <input type="text" id="query" placeholder="Enter your query">
+        <label for="query">Query:</label>
+        <input type="text" id="query" name="query" value="question" required>
 
-    <button onclick="runPythonScript()">Get Response</button>
+        <button type="button" onclick="concatenateStrings()">Submit</button>
+    </form>
 
-    <div>
-        <label>Output:</label>
-        <textarea id="output" rows="10" cols="50" readonly></textarea>
-    </div>
+    <div id="result"></div>
 
     <script>
-        function runPythonScript() {
-            // Get values from input fields
+        function concatenateStrings() {
             var videoUrl = document.getElementById("videoUrl").value;
             var query = document.getElementById("query").value;
+            var answer = videoUrl + ' ' + query;
 
-            // Call Python script using an AJAX request
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Display the output in the 'output' textarea
-                    document.getElementById("output").value = xhr.responseText;
-                }
-            };
-
-            // Replace 'your_python_script.py' with the actual filename
-            xhr.open("GET", "youtube_chat.py?videoUrl=" + videoUrl + "&query=" + query, true);
-            xhr.send();
+            // Display both concatenated string and the answer
+            var result = "<p><strong>Concatenated String:</strong> " + answer + "</p>";
+            result += "<p><strong>Answer:</strong> " + answer + "</p>";
+            document.getElementById("result").innerHTML = result;
         }
     </script>
 
