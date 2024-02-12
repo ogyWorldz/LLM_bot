@@ -43,8 +43,15 @@ Create a simple LLM Bot. This bot will use youtube transripts to answer question
 - [ ] How many tokens to run the code
 - [x] Create webpage with input and output
     - [x] ran simple python code using flask. flask framework is needed to run python code and call from html (i think). This was done in flask folder with app.py
-    - [] use learnings from app.py, and apply it to llm model. 
+    - [x] use learnings from app.py, and apply it to llm model. 
 - [ ] host this on a server
-
+- [ ] update html file with a more attractive interface
+- [ ] 
+<!-- - [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ]  -->
 ---
 
