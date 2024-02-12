@@ -11,6 +11,13 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
 )
 import textwrap
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 load_dotenv(find_dotenv())
 embeddings = OpenAIEmbeddings()
@@ -62,9 +69,26 @@ def get_response_from_query(db, query, k=4):
 
 
 # Example usage:
-video_url = "https://www.youtube.com/watch?v=YHy4gqTyrX4"
-db = create_db_from_youtube_video_url(video_url)
+@app.route('/submit', methods=['POST'])
+def submit():
+    data = request.get_json()
+    video_url = data['videoUrl']
+    db = create_db_from_youtube_video_url(video_url)
+    query = data['query']
+    response, docs = get_response_from_query(db, query)
+    print(textwrap.fill(response, width=50))
+    return jsonify({'answer': response})
 
-query = input("Enter something: ")
-response, docs = get_response_from_query(db, query)
-print(textwrap.fill(response, width=50))
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+# @app.route('/submit', methods=['POST'])
+# def submit():
+#     data = request.get_json()
+#     video_url = data['videoUrl']
+#     query = data['query']
+#     answer = video_url + ' cool ' + query
+#     return jsonify({'answer': answer})

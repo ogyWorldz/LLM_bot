@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Query</title>
+</head>
+<body>
+
+    <h1>Video Query</h1>
+
+    <form id="queryForm">
+        <label for="videoUrl">Video URL:</label>
+        <input type="text" id="videoUrl" name="videoUrl" required>
+
+        <label for="query">Query:</label>
+        <input type="text" id="query" name="query" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function submitForm() {
+            var videoUrl = document.getElementById("videoUrl").value;
+            var query = document.getElementById("query").value;
+
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ videoUrl: videoUrl, query: query }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML = "<p><strong>Answer:</strong> " + data.answer + "</p>";
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+</html>
