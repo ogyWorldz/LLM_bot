@@ -1,10 +1,11 @@
 # Project Summary
 
 ## Title
-LLM Bot - youtube
+LLM Bot - youtube chat app
 
 ## Overview
 Create a simple LLM Bot. This bot will use youtube transripts to answer questions about the video.
+
 
 
 ## Objectives 
