@@ -16,7 +16,7 @@ Create a simple LLM Bot. This bot will use youtube transripts to answer question
 - [ ] Chat bot can recieve input and response
 - [ ] Warehouse as a source
 - [ ] Document as a source
-- [ ] Api as a source
+- [x] Api as a source
 - [ ] Chat bot on public domain
 - [ ] hosted on a server
 - [ ] AWS documentation completed on final product
@@ -42,12 +42,17 @@ Create a simple LLM Bot. This bot will use youtube transripts to answer question
 ## Next Steps
 - [x] code is running
 - [ ] How many tokens to run the code
-- [x] Create webpage with input and output
+- [x] Create webpage with input and output (local)
     - [x] ran simple python code using flask. flask framework is needed to run python code and call from html (i think). This was done in flask folder with app.py
     - [x] use learnings from app.py, and apply it to llm model. 
 - [ ] host this on a server
+    - 1. Make sure code runs locally.
+    - 2. gitignore file required. 
+    - 3. code pipeline -> elastic beanstalk
+        - Create app and env in beanstalk. then setup code pipeline connection with github and deploy in beanstalk
+    - 4. [video1](https://www.youtube.com/watch?v=2BoVhej0QVI)[video2](https://www.youtube.com/watch?v=4tDjVFbi31o)
+- [ ] confirm that OPENAI API key is secure (env)
 - [ ] update html file with a more attractive interface
-- [ ] 
 <!-- - [ ] 
 - [ ] 
 - [ ] 
