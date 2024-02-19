@@ -69,7 +69,7 @@ def get_response_from_query(db, query, k=4):
 
 
 # Example usage:
-@app.route('/submit', methods=['POST'])
+@application.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
     video_url = data['videoUrl']
