@@ -80,7 +80,7 @@ def submit():
     return jsonify({'answer': response})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
 
 
 
