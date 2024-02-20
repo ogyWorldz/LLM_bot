@@ -20,6 +20,8 @@ from flask import Flask, render_template, request, jsonify
 # def hello_world():
 #     return 'helloz'
 
+# load_dotenv(find_dotenv())
+embeddings = OpenAIEmbeddings()
 
 
 application = Flask(__name__)
@@ -28,8 +30,7 @@ application = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# load_dotenv(find_dotenv())
-# embeddings = OpenAIEmbeddings()
+
 
 
 # def create_db_from_youtube_video_url(video_url):
