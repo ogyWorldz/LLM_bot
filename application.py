@@ -1,15 +1,15 @@
-# from langchain.document_loaders import YoutubeLoader
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.embeddings.openai import OpenAIEmbeddings
-# from langchain.vectorstores import FAISS
-# from langchain.chat_models import ChatOpenAI
-# from langchain.chains import LLMChain
-# from dotenv import find_dotenv, load_dotenv
-# from langchain.prompts.chat import (
-#     ChatPromptTemplate,
-#     SystemMessagePromptTemplate,
-#     HumanMessagePromptTemplate,
-# )
+from langchain.document_loaders import YoutubeLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import LLMChain
+from dotenv import find_dotenv, load_dotenv
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
 import textwrap
 from flask import Flask, render_template, request, jsonify
 
