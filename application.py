@@ -5,16 +5,16 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from dotenv import find_dotenv, load_dotenv
+from flask import Flask, render_template, request, jsonify
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
 import textwrap
-from flask import Flask, render_template, request, jsonify
 
-
-from flask import Flask, render_template, request, jsonify
+load_dotenv(find_dotenv())
+embeddings = OpenAIEmbeddings()
 
 application = Flask(__name__)
 
