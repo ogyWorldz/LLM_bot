@@ -32,15 +32,15 @@ load_dotenv(find_dotenv())
 embeddings = OpenAIEmbeddings()
 
 
-def create_db_from_youtube_video_url(video_url):
-    loader = YoutubeLoader.from_youtube_url(video_url)
-    transcript = loader.load()
+# def create_db_from_youtube_video_url(video_url):
+#     loader = YoutubeLoader.from_youtube_url(video_url)
+#     transcript = loader.load()
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
-    docs = text_splitter.split_documents(transcript)
+#     text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
+#     docs = text_splitter.split_documents(transcript)
 
-    db = FAISS.from_documents(docs, embeddings)
-    return db
+#     db = FAISS.from_documents(docs, embeddings)
+#     return db
 
 
 # def get_response_from_query(db, query, k=4):
