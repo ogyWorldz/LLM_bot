@@ -26,7 +26,7 @@ application = Flask(__name__)
 
 @application.route('/')
 def index():
-    return render_template('index.html')
+    return 'helloz 2' ##render_template('index.html')
 
 # load_dotenv(find_dotenv())
 # embeddings = OpenAIEmbeddings()
