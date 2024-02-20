@@ -28,8 +28,8 @@ application = Flask(__name__)
 def index():
     return render_template('index.html')
 
-load_dotenv(find_dotenv())
-embeddings = OpenAIEmbeddings()
+# load_dotenv(find_dotenv())
+# embeddings = OpenAIEmbeddings()
 
 
 # def create_db_from_youtube_video_url(video_url):
