@@ -14,7 +14,7 @@ from langchain.prompts.chat import (
 import textwrap
 
 load_dotenv(find_dotenv())
-embeddings = OpenAIEmbeddings()
+# embeddings = OpenAIEmbeddings()
 
 application = Flask(__name__)
 
