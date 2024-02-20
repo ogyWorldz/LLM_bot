@@ -95,10 +95,10 @@ if __name__ == '__main__':
 
 
 
-@application.route('/submit', methods=['POST'])
-def submit():
-    data = request.get_json()
-    video_url = data['videoUrl']
-    query = data['query']
-    answer = video_url + ' cool ' + query
-    return jsonify({'answer': answer})
+# @application.route('/submit', methods=['POST'])
+# def submit():
+#     data = request.get_json()
+#     video_url = data['videoUrl']
+#     query = data['query']
+#     answer = video_url + ' cool ' + query
+#     return jsonify({'answer': answer})
