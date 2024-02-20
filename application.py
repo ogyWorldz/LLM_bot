@@ -16,13 +16,13 @@ from flask import Flask, render_template, request, jsonify
 
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+@application.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
     video_url = data['videoUrl']
@@ -31,7 +31,7 @@ def submit():
     return jsonify({'answer': answer})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
 
 
 
