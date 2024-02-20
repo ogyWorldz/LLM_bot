@@ -28,77 +28,77 @@ application = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# load_dotenv(find_dotenv())
-# embeddings = OpenAIEmbeddings()
+load_dotenv(find_dotenv())
+embeddings = OpenAIEmbeddings()
 
 
-# def create_db_from_youtube_video_url(video_url):
-#     loader = YoutubeLoader.from_youtube_url(video_url)
-#     transcript = loader.load()
+def create_db_from_youtube_video_url(video_url):
+    loader = YoutubeLoader.from_youtube_url(video_url)
+    transcript = loader.load()
 
-#     text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
-#     docs = text_splitter.split_documents(transcript)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
+    docs = text_splitter.split_documents(transcript)
 
-#     db = FAISS.from_documents(docs, embeddings)
-#     return db
+    db = FAISS.from_documents(docs, embeddings)
+    return db
 
 
-# def get_response_from_query(db, query, k=4):
-#     docs = db.similarity_search(query, k=k)
-#     docs_page_content = " ".join([d.page_content for d in docs])
+def get_response_from_query(db, query, k=4):
+    docs = db.similarity_search(query, k=k)
+    docs_page_content = " ".join([d.page_content for d in docs])
 
-#     chat = ChatOpenAI(model_name="gpt-3.5-turbo-16k", temperature=0.2)
+    chat = ChatOpenAI(model_name="gpt-3.5-turbo-16k", temperature=0.2)
 
-#     # Template to use for the system message prompt
-#     template = """
-#         You are a helpful assistant that that can answer questions about youtube videos 
-#         based on the video's transcript: {docs}
+    # Template to use for the system message prompt
+    template = """
+        You are a helpful assistant that that can answer questions about youtube videos 
+        based on the video's transcript: {docs}
         
-#         Only use the factual information from the transcript to answer the question.
+        Only use the factual information from the transcript to answer the question.
         
-#         If you feel like you don't have enough information to answer the question, say "I don't know".
+        If you feel like you don't have enough information to answer the question, say "I don't know".
         
-#         """
+        """
 
-#     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
+    system_message_prompt = SystemMessagePromptTemplate.from_template(template)
 
-#     # Human question prompt
-#     human_template = "Answer the following question: {question}"
-#     human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
+    # Human question prompt
+    human_template = "Answer the following question: {question}"
+    human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 
-#     chat_prompt = ChatPromptTemplate.from_messages(
-#         [system_message_prompt, human_message_prompt]
-#     )
+    chat_prompt = ChatPromptTemplate.from_messages(
+        [system_message_prompt, human_message_prompt]
+    )
 
-#     chain = LLMChain(llm=chat, prompt=chat_prompt)
+    chain = LLMChain(llm=chat, prompt=chat_prompt)
 
-#     response = chain.run(question=query, docs=docs_page_content)
-#     response = response.replace("\n", "")
-#     return response, docs
+    response = chain.run(question=query, docs=docs_page_content)
+    response = response.replace("\n", "")
+    return response, docs
 
-#     # return docs
+    # return docs
 
-# # Example usage:
-# @application.route('/submit', methods=['POST'])
-# def submit():
-#     data = request.get_json()
-#     video_url = data['videoUrl']
-#     db = create_db_from_youtube_video_url(video_url)
-#     query = data['query']
-#     response, docs = get_response_from_query(db, query)
-#     print(textwrap.fill(response, width=50))
-#     return jsonify({'answer': response})
+# Example usage:
+@application.route('/submit', methods=['POST'])
+def submit():
+    data = request.get_json()
+    video_url = data['videoUrl']
+    db = create_db_from_youtube_video_url(video_url)
+    query = data['query']
+    response, docs = get_response_from_query(db, query)
+    print(textwrap.fill(response, width=50))
+    return jsonify({'answer': response})
 
-# if __name__ == '__main__':
-#     application.run(debug=True)
-
-
+if __name__ == '__main__':
+    application.run(debug=True)
 
 
-# @app.route('/submit', methods=['POST'])
-# def submit():
-#     data = request.get_json()
-#     video_url = data['videoUrl']
-#     query = data['query']
-#     answer = video_url + ' cool ' + query
-#     return jsonify({'answer': answer})
+
+
+@application.route('/submit', methods=['POST'])
+def submit():
+    data = request.get_json()
+    video_url = data['videoUrl']
+    query = data['query']
+    answer = video_url + ' cool ' + query
+    return jsonify({'answer': answer})
