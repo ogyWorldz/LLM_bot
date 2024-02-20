@@ -40,14 +40,3 @@ Werkzeug==3.0.1
 yarl==1.9.4
 youtube-transcript-api==0.6.2
 
-python-dotenv
-openai
-google-api-python-client # Google API
-google-search-results # SerpAPI
-chromadb
-tiktoken
-faiss-cpu
-wikipedia
-psycopg2
-pinecone-client
-pgvector
