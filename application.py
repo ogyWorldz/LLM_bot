@@ -16,7 +16,7 @@ import textwrap
 ############################################################################################################
 ############################################################################################################ -testing
 load_dotenv(find_dotenv())
-embeddings = OpenAIEmbeddings() ##### this function appears to cause a 502 error. Could it be python version? Both appear to be 3.11
+# embeddings = OpenAIEmbeddings() ##### this function appears to cause a 502 error. Could it be python version? Both appear to be 3.11
 
 application = Flask(__name__)
 
