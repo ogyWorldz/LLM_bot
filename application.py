@@ -29,7 +29,7 @@ def submit():
     data = request.get_json()
     video_url = data['videoUrl']
     query = data['query']
-    answer = video_url + ' cool ' + query
+    answer = 'My apologies, this response is still under development. '
     return jsonify({'answer': answer})
 
 if __name__ == '__main__':
