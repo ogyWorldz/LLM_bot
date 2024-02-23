@@ -45,14 +45,17 @@ Create a simple LLM Bot. This bot will use youtube transripts to answer question
 - [x] Create webpage with input and output (local)
     - [x] ran simple python code using flask. flask framework is needed to run python code and call from html (i think). This was done in flask folder with app.py
     - [x] use learnings from app.py, and apply it to llm model. 
-- [ ] host this on a server
+- [x] Codepipline deployed?
+- [x] host this on a server
     - 1. Make sure code runs locally.
     - 2. gitignore file required. 
     - 3. code pipeline -> elastic beanstalk
         - Create app and env in beanstalk. then setup code pipeline connection with github and deploy in beanstalk
     - 4. [video1](https://www.youtube.com/watch?v=2BoVhej0QVI)[video2](https://www.youtube.com/watch?v=4tDjVFbi31o)
-- [ ] confirm that OPENAI API key is secure (env)
-- [ ] update html file with a more attractive interface
+- [x]  Route53 for domain name: ogywrld.com ; certificate applied using AWS Certificate Manage ACM
+- [x] confirm that OPENAI API key is secure (env)
+- [ ] # embeddings = OpenAIEmbeddings() # this function appears to cause a 502 error. Could it be python version? Both appear to be 3.11
+
 <!-- - [ ] 
 - [ ] 
 - [ ] 
