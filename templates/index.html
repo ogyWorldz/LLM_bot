@@ -3,97 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Query</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
-
-        #queryForm {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-            box-sizing: border-box;
-
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Home Page</title>
 </head>
 <body>
+    <h1>Welcome to the Homepage!</h1>
+    <!-- <img src="{{ url_for('static', filename='photos/logo.svg') }}" alt="Profile Picture"> -->
+    <img src="{{ url_for('static', filename='photos/pic01.jpg') }}" alt="Profile Picture">
 
-    <h1>Video Query</h1>
-
-    <form id="queryForm">
-        <label for="videoUrl">Input Video URL:</label>
-        <input type="text" id="videoUrl" name="videoUrl" required>
-
-        <label for="query">Ask Question:</label>
-        <input type="text" id="query" name="query" value="what is this video about?" required>
-
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
-
-    <div id="result"></div>
-
-    <script>
-        function submitForm() {
-            var videoUrl = document.getElementById("videoUrl").value;
-            var query = document.getElementById("query").value;
-
-            fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ videoUrl: videoUrl, query: query }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("result").innerHTML = "<p><strong>Answer:</strong> " + data.answer + "</p>";
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
-
+    <p>
+        <a href="{{ url_for('youtubeChatAI') }}">Youtube Chat AI</a>
+        <a href="https://myportfoliobucket-ogyworld.s3.amazonaws.com/my_portfolio/index.html">Resume</a>
+        <!-- <a href="https://www.example.com" target="_blank">External Site</a> -->
+    </p>
 </body>
 </html>

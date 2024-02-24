@@ -24,6 +24,14 @@ application = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@application.route('/youtubeChatAI')
+def youtubeChatAI():
+    return render_template('youtubeChatAI.html')
+
+@application.route('/resume')
+def resume():
+    return render_template('resume.html')
+
 @application.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
