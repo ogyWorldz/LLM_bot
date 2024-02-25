@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Query Form</title>
+    <!-- If you're using Flask and url_for -->
+    <a href="{{ url_for('index') }}">Go back to Home</a>
+
+    <title>Video Query</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,6 +47,15 @@
             cursor: pointer;
             font-size: 16px;
         }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+
+        }
 
         button:hover {
             background-color: #45a049;
@@ -51,15 +63,20 @@
     </style>
 </head>
 <body>
+
+    <h1>Video Query</h1>
+
     <form id="queryForm">
-        <label for="videoUrl">Input A Video URL:</label>
+        <label for="videoUrl">Input Video URL:</label>
         <input type="text" id="videoUrl" name="videoUrl" required>
 
-        <label for="query">Ask A Question:</label>
-        <input type="text" id="query" name="query" required>
+        <label for="query">Ask Question:</label>
+        <input type="text" id="query" name="query" value="what is this video about?" required>
 
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
+
+    <div id="result"></div>
 
     <script>
         function submitForm() {
@@ -80,5 +97,6 @@
             .catch(error => console.error('Error:', error));
         }
     </script>
+
 </body>
 </html>
