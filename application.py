@@ -36,6 +36,10 @@ def resume():
 def resumeMatch():
     return render_template('resume_match.html')
 
+@application.route('/memegame')
+def memegame():
+    return render_template('memegame.html')
+
 @application.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
