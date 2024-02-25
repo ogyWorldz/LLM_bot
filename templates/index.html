@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="static/css/main.css" />
+		<link rel="shortcut icon" href="static/favicon.ico"> 
 	</head>
 	<body class="is-preload">
 
@@ -17,8 +18,8 @@
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
+					<!-- <li><a href="#work">Work</a></li> -->
+					<li><a href="#portfolio">AWS</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -38,14 +39,16 @@
 								  Thanks for stopping by. <br>
 								  If you are a recruiter, checkout out my <a href="https://myportfoliobucket-ogyworld.s3.amazonaws.com/my_portfolio/index.html" target="_blank">Resume</a>. 
 								</p>
-							<a href="#work" class="button large scrolly">Learn about what I do</a>
+							<!-- <a href="#work" class="button large scrolly">Learn about what I do</a> -->
+							<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
 						</div>
 					</div>
 				</div>
 			</article>
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
+		<!-- Work --> 
+
+			<!-- <article id="work" class="wrapper style2">
 				<div class="container">
 					<header>
 						<h2>Here's all the stuff I do.</h2>
@@ -79,7 +82,7 @@
 						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
 					</footer>
 				</div>
-			</article>
+			</article> -->
 
 		<!-- Portfolio -->
 			<article id="portfolio" class="wrapper style3">
@@ -90,25 +93,35 @@
 					</header>
 					<div class="row">
 						
-						<div class="col-4 col-6-medium col-12-small">
+						<div class="col-6 col-8-medium col-16-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="static/images/pic01.jpg" alt="" /></a>
+								<!-- <a href="#" class="image featured"><img src="static/images/pic01.jpg" alt="" /></a> -->
+								<a href="#" class="image featured"><img src="static/diagrams/youtubechatAIDiagram.png" alt="" /></a>
 								<h3><a href="{{ url_for('youtubeChatAI') }}" target="_blank" >YouTube AI Chat</a></h3>
 								<p>Use AI to converse with a Youtube Video. Yup, just add a link to a Youtube video and ask a question!</p>
+
 							</article>
 						</div>
 
-						<div class="col-4 col-6-medium col-12-small">
+						<div class="col-6 col-8-medium col-16-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="static/images/pic02.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="static/diagrams/resumeDiagram.png" alt="" /></a>
+								<h3><a href="https://myportfoliobucket-ogyworld.s3.amazonaws.com/my_portfolio/index.html"  target="_blank" >My Static Resume</a></h3>
+								<p>A static Resume hosted by Amazon S3</p>
+							</article>
+						</div>						
+
+						<div class="col-6 col-8-medium col-16-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="static/diagrams/word_matcher.png" alt="" /></a>
 								<h3><a href="{{ url_for('resumeMatch') }}" target="_blank" >Resume Keyword Matcher</a></h3>
 								<p>Seeing if your resume matched a job description? Use this tool to improve your score on the ATS systems that recruiters are using.</p>
 							</article>
 						</div>
 						
-						<div class="col-4 col-6-medium col-12-small">
+						<div class="col-6 col-8-medium col-16-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="static/images/pic03.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="static/diagrams/memegame.png" alt="" /></a>
 								<h3><a href="#" target="_blank" >Picture Match Game</a></h3>
 								<p>See if you can find the pairs!</p>
 							</article>
@@ -139,16 +152,16 @@
 						</div> -->
 
 					</div>
-					<footer>
+					<!-- <footer>
 						<p>Have more questions for me?</p>
-						<a href="#contact" class="button large scrolly">Get in touch with me</a>
-					</footer>
+						<a href="https://www.linkedin.com/in/ocangoz/" class="button large scrolly" target="_blank" >Get in touch with me</a>
+					</footer> -->
 				</div>
 			</article>
 
 		<!-- Contact -->
 			<article id="contact" class="wrapper style4">
-				<div class="container medium">
+				<!-- <div class="container medium">
 					<header>
 						<h2>Do you want to collaborate on a project?</h2>
 						<p>Send me a message and lets get in touch.</p>
@@ -177,21 +190,21 @@
 									</div>
 								</div>
 							</form>
-						</div>
+						</div> -->
 						<div class="col-12">
+							<p>Have more questions for me?</p>
+							<a href="https://www.linkedin.com/in/ocangoz/" class="button large scrolly" target="_blank" >Get in touch with me</a>
 							<hr />
 							<h3>Find me on ...</h3>
 							<ul class="social">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
+
+								<li><a href="https://www.linkedin.com/in/ocangoz/" class="icon brands fa-linkedin-in"><span class="label"target="_blank" >LinkedIn</span></a></li>
+								<li><a href="https://github.com/ogyWorldz" class="icon brands fa-github"><span class="label" target="_blank" >Github</span></a></li>
+								<li><a href="https://www.instagram.com/ogycan" class="icon brands fa-instagram" target="_blank" ><span></span></a></li>
+
+								<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> 
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> 
 								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
 								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
 								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
 								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
