@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('img');
             card.setAttribute('src', 'static/memegame/images/blank.png');
             card.setAttribute('data-id', i);
-            card.style.width = '300px';  // Set the width as needed
-            card.style.height = '300px'; // Set the height as needed
+            card.style.width = '200px';  // Set the width as needed
+            card.style.height = '200px'; // Set the height as needed
             card.addEventListener('click', flipCard);
             grid.appendChild(card);
         }
