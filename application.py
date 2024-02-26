@@ -6,12 +6,16 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, render_template, request, jsonify
+from collections import Counter
+from nltk.corpus import stopwords
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
 import textwrap
+import nltk
+import re
 
 
 ############################################################################################################
