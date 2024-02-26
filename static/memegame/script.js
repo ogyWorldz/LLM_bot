@@ -48,10 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('img');
             card.setAttribute('src', 'static/memegame/images/blank.png');
             card.setAttribute('data-id', i);
-            card.style.width = '300px';  // Set the width as needed
-            card.style.height = '300px'; // Set the height as needed
+            card.style.width = '200px';  // Set the width as needed
+            card.style.height = '200px'; // Set the height as needed
+            card.style.margin = '10px'; // Set the height as needed
+
             card.addEventListener('click', flipCard);
             grid.appendChild(card);
+            // card.style.width = 211.8px;
+            // card.style.height = 166.2px;
+            // card.style.background-color = #565c6f;
+            // card.style.border-radius = '10px';
+            // card.style.box-shadow = 0 4px 8px rgba(0, 0, 0, 0.2);
+            // card.style.cursor = pointer;
+            // card.style.display = flex;
+            // card.style.align-items = center;
+            // card.style.justify-content = center;
+            // card.style.overflow = hidden;
+
+            
         }
     }
 
