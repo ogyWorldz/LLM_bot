@@ -86,17 +86,17 @@ def keyword_analysis(resume, job_description):
 
 
 
-@application.route('/jobApplicationAnalyzer', methods=['GET', 'POST'])
-def jobApplicationAnalyzer():
-    if request.method == 'POST':
-        resume = request.form['resume']
-        job_description = request.form['job_description']
+# @application.route('/jobApplicationAnalyzer', methods=['GET', 'POST'])
+# def jobApplicationAnalyzer():
+#     if request.method == 'POST':
+#         resume = request.form['resume']
+#         job_description = request.form['job_description']
 
-        percentage_score, missing_keywords = keyword_analysis(resume, job_description)
+#         percentage_score, missing_keywords = keyword_analysis(resume, job_description)
 
-        return render_template('jobApplicationAnalyzer.html', score=percentage_score, missing_keywords=missing_keywords)
+#         return render_template('jobApplicationAnalyzer.html', score=percentage_score, missing_keywords=missing_keywords)
 
-    return render_template('jobApplicationAnalyzer.html', score=None, missing_keywords=None)
+#     return render_template('jobApplicationAnalyzer.html', score=None, missing_keywords=None)
 
 
 # ###########
