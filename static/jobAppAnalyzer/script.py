@@ -1,3 +1,11 @@
+from collections import Counter
+from nltk.corpus import stopwords
+import nltk
+import re
+
+# Download the stopwords dataset (run this once)
+nltk.download('stopwords')
+
 def keyword_analysis(resume, job_description):
     # Load English stopwords
     stop_words = set(stopwords.words('english'))
