@@ -6,17 +6,12 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, render_template, request, jsonify
-from collections import Counter
-from collections import Counter
-from nltk.corpus import stopwords
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
 import textwrap
-import nltk
-import re
 
 ############################################################################################################
 ############################################################################################################ -testing
@@ -53,53 +48,6 @@ def submit():
     answer = 'this response is still under development.'
     return jsonify({'answer': answer})
 
-
-# ########### jobApplicationAnalyzer 
-
-# def keyword_analysis(resume, job_description):
-#     # Load English stopwords
-#     stop_words = set(stopwords.words('english'))
-
-#     # Simple keyword analysis logic with stopwords removal
-#     resume_words = [word.lower() for word in re.findall(r'\b\w+\b', resume) if word.lower() not in stop_words]
-#     job_words = [word.lower() for word in re.findall(r'\b\w+\b', job_description) if word.lower() not in stop_words]
-
-#     common_words = set(resume_words).intersection(job_words)
-
-#     # Count occurrences of each word in the job description
-#     missing_words_count = Counter(job_words)
-
-#     # Subtract occurrences in the resume from the job description
-#     for word in common_words:
-#         missing_words_count[word] -= resume_words.count(word)
-
-#     # Filter out words with zero or negative occurrences
-#     missing_words_count = {word: count for word, count in missing_words_count.items() if count > 0}
-
-#     # Get the top missing keywords ordered by occurrence
-#     top_missing_keywords = [(keyword, count) for keyword, count in sorted(missing_words_count.items(), key=lambda x: x[1], reverse=True)[:10]]
-
-#     percentage_score = round((len(common_words) / len(job_words)) * 100, 2)
-
-#     return percentage_score, top_missing_keywords
-
-
-
-
-# @application.route('/jobApplicationAnalyzer', methods=['GET', 'POST'])
-# def jobApplicationAnalyzer():
-#     if request.method == 'POST':
-#         resume = request.form['resume']
-#         job_description = request.form['job_description']
-
-#         percentage_score, missing_keywords = keyword_analysis(resume, job_description)
-
-#         return render_template('jobApplicationAnalyzer.html', score=percentage_score, missing_keywords=missing_keywords)
-
-#     return render_template('jobApplicationAnalyzer.html', score=None, missing_keywords=None)
-
-
-# ###########
 
 
 
