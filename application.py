@@ -44,15 +44,20 @@ def memegame():
 
 @application.route('/jobApplicationAnalyzer', methods=['GET', 'POST'])
 def jobApplicationAnalyzer():
-    if request.method == 'POST':
-        resume = request.form['resume']
-        job_description = request.form['job_description']
+    try:
+        if request.method == 'POST':
+            resume = request.form['resume']
+            job_description = request.form['job_description']
 
-        percentage_score, missing_keywords = keyword_analysis(resume, job_description)
+            percentage_score, missing_keywords = keyword_analysis(resume, job_description)
 
-        return render_template('jobApplicationAnalyzer.html', score=percentage_score, missing_keywords=missing_keywords)
+            return render_template('jobApplicationAnalyzer.html', score=percentage_score, missing_keywords=missing_keywords)
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        # Log the error, return a specific error page, or handle it in a way that fits your application.
 
     return render_template('jobApplicationAnalyzer.html', score=None, missing_keywords=None)
+
 
 # where does this function belong?
 # to revert, hide this function, the route function, and remove from index.html
