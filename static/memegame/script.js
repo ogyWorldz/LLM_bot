@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsWon = [];
 
     const cardArray = [
-        // { name: 'card1', img: 'static/memegame/images/distracted.png' },
-        // { name: 'card1', img: 'static/memegame/images/distracted.png' },
-        // { name: 'card2', img: 'static/memegame/images/drake.png' },
-        // { name: 'card2', img: 'static/memegame/images/drake.png' },
+        { name: 'card1', img: 'static/memegame/images/distracted.png' },
+        { name: 'card1', img: 'static/memegame/images/distracted.png' },
+        { name: 'card2', img: 'static/memegame/images/drake.png' },
+        { name: 'card2', img: 'static/memegame/images/drake.png' },
         // { name: 'card3', img: 'static/memegame/images/fine.png' },
         // { name: 'card3', img: 'static/memegame/images/fine.png' },
         // { name: 'card4', img: 'static/memegame/images/rollsafe.png' },
